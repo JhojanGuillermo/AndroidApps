@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "104679720477",
+    "firebase_url": "https://foundobjectapp.firebaseio.com",
+    "project_id": "foundobjectapp",
+    "storage_bucket": "foundobjectapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104679720477:android:8f3646285e090899",
+        "android_client_info": {
+          "package_name": "foundobjectapp.jhojan.com.foundobjectapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "104679720477-rs63nuh5eadabq76gcb2tb00k7a4cdq0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "foundobjectapp.jhojan.com.foundobjectapp",
+            "certificate_hash": "5692a62434d396f3f556e3773f42f860c296c7c4"
+          }
+        },
+        {
+          "client_id": "104679720477-obroiupjvis2rdd5t1hha6rf2jfqtarm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7vHSHIKlP-pVClUvnek175E20AURAnsE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "104679720477-obroiupjvis2rdd5t1hha6rf2jfqtarm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
