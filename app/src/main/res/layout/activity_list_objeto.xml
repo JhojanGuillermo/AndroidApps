@@ -4,6 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="foundobjectapp.jhojan.com.foundobjectapp.ListObjetoActivity">
+    tools:context="foundobjectapp.jhojan.com.foundobjectapp.activities.ListObjetoActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:paddingTop="6dp"
+        android:id="@+id/objetoList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </android.support.constraint.ConstraintLayout>
