@@ -1,0 +1,63 @@
+package foundobjectapp.jhojan.com.foundobjectapp.activities;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.TextView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import foundobjectapp.jhojan.com.foundobjectapp.R;
+
+public class DetallesActivity extends AppCompatActivity {
+
+    private static final String TAG = DetallesActivity.class.getSimpleName();
+
+    private int id;
+
+    private String Objeto;
+
+    private String Fecha;
+
+    private String Lugar;
+
+    private String Descripción;
+
+    TextView objeto;
+    TextView fecha;
+    TextView lugar;
+    TextView descripción;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_detalles);
+
+        objeto = (TextView) findViewById(R.id.objeto_text);
+        fecha = (TextView) findViewById(R.id.fechaText);
+        lugar = (TextView) findViewById(R.id.lugarText);
+        descripción = (TextView) findViewById(R.id.descText);
+
+//        FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+//
+//        if (this.getIntent().getExtras() != null){
+//            Bundle bundle = this.getIntent().getExtras();
+//            id = bundle.getInt("ID");
+//        }
+//
+//        mDatabase.getReference().child("Objetos").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                String nameobjeto = dataSnapshot.getValue(String.class);
+//                objeto.setText(nameobjeto);
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
+    }
+}
