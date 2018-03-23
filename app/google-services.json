@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "104679720477-ihecdu5be8tbvrs9696dgkv6trr9p7ju.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "foundobjectapp.jhojan.com.foundobjectapp",
+            "certificate_hash": "a4210d0076ff51455b52f9b873c0b2bb026ce7a4"
+          }
+        },
+        {
           "client_id": "104679720477-os4kku8h7vblvl5m3nkh6qml7p2pf6vt.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

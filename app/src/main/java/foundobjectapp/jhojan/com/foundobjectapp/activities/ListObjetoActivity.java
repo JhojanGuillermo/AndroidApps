@@ -1,5 +1,6 @@
 package foundobjectapp.jhojan.com.foundobjectapp.activities;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.support.v7.app.AppCompatActivity;
@@ -7,8 +8,10 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
+import android.widget.AdapterView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,6 +33,8 @@ public class ListObjetoActivity extends AppCompatActivity {
 
     ObjetosAdapter adapter;
 
+    private int id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +43,6 @@ public class ListObjetoActivity extends AppCompatActivity {
         rvObjeto = (RecyclerView) findViewById(R.id.objetoList);
 
         rvObjeto.setLayoutManager(new LinearLayoutManager(this));
-
         rvObjeto.setLayoutManager(new GridLayoutManager(this, 2));
         rvObjeto.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
 
@@ -46,7 +50,7 @@ public class ListObjetoActivity extends AppCompatActivity {
 
         FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
 
-        adapter = new ObjetosAdapter(objetos);
+        adapter = new ObjetosAdapter(objetos, this);
 
         rvObjeto.setAdapter(adapter);
 
@@ -64,9 +68,18 @@ public class ListObjetoActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                Log.e("", "No se encontraron objetos", databaseError.toException());
             }
         });
+
+//        rvObjeto.setOnClickListener(new AdapterView.OnClickListener(){
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getApplicationContext(), DetallesActivity.class);
+//                intent.putExtra("ID", id);
+//                startActivity(intent);
+//            }
+//        });
 
     }
 

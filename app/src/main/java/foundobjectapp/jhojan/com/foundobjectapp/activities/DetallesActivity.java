@@ -15,7 +15,7 @@ public class DetallesActivity extends AppCompatActivity {
 
     private static final String TAG = DetallesActivity.class.getSimpleName();
 
-    private int id;
+    private String Id;
 
     private String Objeto;
 
@@ -29,24 +29,33 @@ public class DetallesActivity extends AppCompatActivity {
     TextView fecha;
     TextView lugar;
     TextView descripción;
+    TextView id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalles);
 
+        id = (TextView) findViewById(R.id.idText);
         objeto = (TextView) findViewById(R.id.objeto_text);
         fecha = (TextView) findViewById(R.id.fechaText);
         lugar = (TextView) findViewById(R.id.lugarText);
         descripción = (TextView) findViewById(R.id.descText);
 
-//        FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
-//
+       // FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+
 //        if (this.getIntent().getExtras() != null){
 //            Bundle bundle = this.getIntent().getExtras();
 //            id = bundle.getInt("ID");
 //        }
-//
+        objeto.setText(getIntent().getStringExtra("OBJETO"));
+        id.setText(getIntent().getStringExtra("ID"));
+        fecha.setText(getIntent().getStringExtra("FECHA"));
+        lugar.setText(getIntent().getStringExtra("LUGAR"));
+        descripción.setText(getIntent().getStringExtra("DESCRIP"));
+        //objeto.setText(getIntent().getStringExtra("IMG"));
+
+
 //        mDatabase.getReference().child("Objetos").addValueEventListener(new ValueEventListener() {
 //            @Override
 //            public void onDataChange(DataSnapshot dataSnapshot) {

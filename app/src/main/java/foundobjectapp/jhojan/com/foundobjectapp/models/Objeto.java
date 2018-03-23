@@ -6,6 +6,8 @@ package foundobjectapp.jhojan.com.foundobjectapp.models;
 
 public class Objeto {
 
+    private Integer id;
+
     String Objeto;
 
     String Fecha;
@@ -77,5 +79,9 @@ public class Objeto {
                 ", Descripción='" + Descripción + '\'' +
                 ", Imagen='" + Imagen + '\'' +
                 '}';
+    }
+
+    public Integer getId() {
+        return id;
     }
 }
