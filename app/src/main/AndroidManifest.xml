@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".activities.DashboardActivity" />
         <activity android:name=".activities.ListObjetoActivity" />
-        <activity android:name=".activities.DetallesActivity"></activity>
+        <activity android:name=".activities.DetallesActivity" />
+        <activity android:name=".activities.ObjetosEntregadosActivity"></activity>
     </application>
 
 </manifest>

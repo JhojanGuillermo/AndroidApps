@@ -17,7 +17,7 @@ import foundobjectapp.jhojan.com.foundobjectapp.R;
 public class DashboardActivity extends AppCompatActivity {
 
     Button button;
-    Button detallesBtn;
+    Button entregadosBtn;
     FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener mAuthListener;
 
@@ -34,7 +34,7 @@ public class DashboardActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         Button listObjetos = (Button) findViewById(R.id.verObjetos);
-        Button detalles = (Button) findViewById(R.id.vistaDetalle);
+        Button entregObjetos = (Button) findViewById(R.id.verObjetosEntreg);
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -53,10 +53,10 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
-        detalles.setOnClickListener(new View.OnClickListener() {
+        entregObjetos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), DetallesActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ObjetosEntregadosActivity.class);
                 startActivity(intent);
             }
         });

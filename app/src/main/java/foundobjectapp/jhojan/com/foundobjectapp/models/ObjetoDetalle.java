@@ -8,6 +8,8 @@ public class ObjetoDetalle {
 
     String Objeto;
 
+    String Estado;
+
     String Fecha;
 
     String Lugar;
@@ -19,8 +21,9 @@ public class ObjetoDetalle {
     public ObjetoDetalle() {
     }
 
-    public ObjetoDetalle(String objeto, String fecha, String lugar, String descripción, String imagen) {
+    public ObjetoDetalle(String objeto, String estado, String fecha, String lugar, String descripción, String imagen) {
         Objeto = objeto;
+        Estado = estado;
         Fecha = fecha;
         Lugar = lugar;
         Descripción = descripción;
@@ -33,6 +36,14 @@ public class ObjetoDetalle {
 
     public void setObjeto(String objeto) {
         Objeto = objeto;
+    }
+
+    public String getEstado() {
+        return Estado;
+    }
+
+    public void setEstado(String estado) {
+        Estado = estado;
     }
 
     public String getFecha() {
@@ -71,6 +82,7 @@ public class ObjetoDetalle {
     public String toString() {
         return "ObjetoDetalle{" +
                 "Objeto='" + Objeto + '\'' +
+                ", Estado='" + Estado + '\'' +
                 ", Fecha='" + Fecha + '\'' +
                 ", Lugar='" + Lugar + '\'' +
                 ", Descripción='" + Descripción + '\'' +

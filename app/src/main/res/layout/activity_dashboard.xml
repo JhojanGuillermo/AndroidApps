@@ -21,13 +21,13 @@
         android:layout_alignParentBottom="true"/>
 
     <Button
-        android:id="@+id/vistaDetalle"
+        android:id="@+id/verObjetosEntreg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
-        android:text="Vista de detalles" />
+        android:text="VER OBJETOS ENTREGADOS" />
 
 </RelativeLayout>
