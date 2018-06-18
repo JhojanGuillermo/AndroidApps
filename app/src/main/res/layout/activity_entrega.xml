@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".activities.EntregaActivity">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
-                android:gravity="center"
-                android:paddingBottom="5dp">
+                android:gravity="center">
 
                 <ImageView
                     android:id="@+id/portada_img"
@@ -28,59 +30,19 @@
 
             </RelativeLayout>
 
-            <RelativeLayout
+            <TextView
+                android:id="@+id/objeto_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="5dp">
-
-                <View
-                    android:id="@+id/strut1"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_centerHorizontal="true" />
-
-                <RelativeLayout
-                    android:id="@+id/objetoForm"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignRight="@id/strut1"
-                    android:gravity="center">
-
-                    <TextView
-                        android:id="@+id/objetoLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:text="Objeto"
-                        android:textAppearance="@style/Subtitulos" />
-
-                    <TextView
-                        android:id="@+id/objeto_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/objetoLabel"
-                        android:text="Objeto"
-                        android:textAppearance="@style/Descripciones" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@id/strut1"
-                    android:layout_alignParentRight="true"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/etiquetado" />
-                </RelativeLayout>
-            </RelativeLayout>
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="12dp"
+                android:text="Nombre del objeto"
+                android:textAlignment="center"
+                android:textColor="#000dff"
+                android:textSize="22dp"
+                android:textStyle="bold" />
 
             <RelativeLayout
-                android:id="@+id/realizar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp">
@@ -92,7 +54,7 @@
                     android:layout_centerHorizontal="true" />
 
                 <RelativeLayout
-                    android:id="@+id/fechaForm"
+                    android:id="@+id/nombresForm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
@@ -100,23 +62,25 @@
                     android:gravity="center">
 
                     <TextView
-                        android:id="@+id/labelFecha"
+                        android:id="@+id/nombres"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Fecha de Hallazgo"
+                        android:text="Nombres"
                         android:textAppearance="@style/Subtitulos" />
 
-                    <TextView
-                        android:id="@+id/fechaText"
+                    <EditText
+                        android:id="@+id/nombreText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/labelFecha"
-                        android:text="Fecha de Hallazgo"
+                        android:layout_below="@+id/nombres"
+                        android:ems="8"
+                        android:hint="Nombres"
+                        android:inputType="text"
                         android:textAppearance="@style/Descripciones" />
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/lugarForm"
+                    android:id="@+id/apellidosForm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@id/strut"
@@ -124,54 +88,63 @@
                     android:gravity="center">
 
                     <TextView
-                        android:id="@+id/labelLugar"
+                        android:id="@+id/apellidoTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Lugar de Hallazgo"
+                        android:text="Apellidos"
                         android:textAppearance="@style/Subtitulos" />
 
-                    <TextView
-                        android:id="@+id/lugarText"
+                    <EditText
+                        android:id="@+id/apellidoText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/labelLugar"
-                        android:text="Lugar de Hallazgo"
+                        android:layout_below="@id/apellidoTitle"
+                        android:ems="8"
+                        android:hint="Apellidos"
+                        android:inputType="date"
                         android:textAppearance="@style/Descripciones" />
                 </RelativeLayout>
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/descForm"
+                android:id="@+id/contactoForm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp">
 
                 <TextView
-                    android:id="@+id/labelDesc"
+                    android:id="@+id/contactoTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Descripción"
+                    android:text="Correo"
                     android:textAppearance="@style/Subtitulos" />
 
-                <TextView
-                    android:id="@+id/descText"
+                <EditText
+                    android:id="@+id/contactoText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/labelDesc"
-                    android:text="Descripción"
+                    android:layout_below="@id/contactoTitle"
+                    android:hint="E-Mail"
+                    android:inputType="textEmailAddress"
                     android:textAlignment="center"
                     android:textAppearance="@style/Descripciones" />
-
             </RelativeLayout>
 
             <Button
-                android:id="@+id/entregarButton"
+                android:id="@+id/entregaBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/realizar"
                 android:text="Entregar" />
+
+            <Button
+                android:id="@+id/cancelarBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cancelar" />
 
         </LinearLayout>
     </ScrollView>
+
+
 </LinearLayout>

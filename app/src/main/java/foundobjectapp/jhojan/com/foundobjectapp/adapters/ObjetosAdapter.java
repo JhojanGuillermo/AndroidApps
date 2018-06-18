@@ -51,7 +51,7 @@ public class ObjetosAdapter extends RecyclerView.Adapter<ObjetosAdapter.Objetosv
         public void onBindViewHolder(ObjetosviewHolder holder, int position) {
                 final Objeto objeto = objetoList.get(position);
                 holder.nameObjeto.setText(objeto.getObjeto());
-                holder.imageView.setImageURI(Uri.parse(objeto.getImagen().toString()));
+                //holder.imageView.setImageURI(Uri.parse(objeto.getImagen().toString()));
         }
 
         @Override
@@ -62,7 +62,7 @@ public class ObjetosAdapter extends RecyclerView.Adapter<ObjetosAdapter.Objetosv
         public static class ObjetosviewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
                 TextView nameObjeto;
-                ImageView imageView;
+                //ImageView imageView;
                 ArrayList<Objeto> objetos = new ArrayList<Objeto>();
                 Context ctx;
 
@@ -72,7 +72,7 @@ public class ObjetosAdapter extends RecyclerView.Adapter<ObjetosAdapter.Objetosv
                         this.ctx = ctx;
                         itemView.setOnClickListener(this);
                         nameObjeto = (TextView) itemView.findViewById(R.id.fullname_text);
-                        imageView = (ImageView) itemView.findViewById(R.id.picture_image);
+                        //imageView = (ImageView) itemView.findViewById(R.id.picture_image);
 
                 }
 

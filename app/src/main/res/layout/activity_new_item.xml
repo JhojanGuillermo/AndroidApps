@@ -18,26 +18,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 android:gravity="center">
-        <ImageView
-            android:id="@+id/objetoImg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <ImageButton
-            android:id="@+id/imagenObj"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/uploadimagen"/>
+                <ImageView
+                    android:id="@+id/objetoImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/uploadimagen"/>
             </RelativeLayout>
      <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="5dp">
+
+         <View android:id="@+id/strut"
+             android:layout_width="0dp"
+             android:layout_height="0dp"
+             android:layout_centerHorizontal="true"/>
+
         <RelativeLayout
             android:id="@+id/objetoForm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="25dp">
+            android:layout_alignRight="@id/strut"
+            android:gravity="center"
+            android:layout_alignParentLeft="true">
 
             <TextView
                 android:id="@+id/objetoTitle"
@@ -55,13 +58,15 @@
                 android:textAppearance="@style/Descripciones"
                 android:layout_below="@+id/objetoTitle"
                 android:inputType="text"
+                android:ems="8"
                 android:hint="Nombre del Objeto"/>
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/objetoForm"
-            android:layout_marginStart="40dp">
+            android:layout_alignLeft="@id/strut"
+            android:gravity="center"
+            android:layout_alignParentRight="true">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -72,11 +77,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="5dp">
+        <View android:id="@+id/strut1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerHorizontal="true"/>
         <RelativeLayout
             android:id="@+id/lugarForm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="25dp">
+            android:layout_alignRight="@id/strut1"
+            android:gravity="center"
+            android:layout_alignParentLeft="true">
             <TextView
                 android:id="@+id/lugarTitle"
                 android:layout_width="wrap_content"
@@ -91,14 +102,16 @@
                 android:textAppearance="@style/Descripciones"
                 android:layout_below="@+id/lugarTitle"
                 android:inputType="text"
+                android:ems="8"
                 android:hint="Lugar de Hallazgo"/>
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/fechaForm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/lugarForm"
-            android:layout_marginStart="20dp">
+            android:layout_alignLeft="@id/strut1"
+            android:gravity="center"
+            android:layout_alignParentRight="true">
             <TextView
                 android:id="@+id/fechaTitle"
                 android:layout_width="wrap_content"
@@ -113,6 +126,7 @@
                 android:textAppearance="@style/Descripciones"
                 android:layout_below="@id/fechaTitle"
                 android:inputType="date"
+                android:ems="8"
                 android:hint="Fecha de Hallazgo"/>
         </RelativeLayout>
     </RelativeLayout>
@@ -131,6 +145,8 @@
 
         <EditText
             android:id="@+id/descText"
+            android:textAlignment="center"
+            android:hint="Ingrese descripcion del objeto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="@style/Descripciones"

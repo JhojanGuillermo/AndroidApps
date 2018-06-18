@@ -1,8 +1,11 @@
 package foundobjectapp.jhojan.com.foundobjectapp.activities;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -34,19 +37,20 @@ public class DetallesActivity extends AppCompatActivity {
     TextView lugar;
     TextView descripción;
     TextView id;
-    ImageView imageView;
+    Button entrega;
+    //ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalles);
 
-        id = (TextView) findViewById(R.id.idText);
         objeto = (TextView) findViewById(R.id.objeto_text);
         fecha = (TextView) findViewById(R.id.fechaText);
         lugar = (TextView) findViewById(R.id.lugarText);
         descripción = (TextView) findViewById(R.id.descText);
-        imageView = (ImageView) findViewById(R.id.portada_img);
+        entrega = (Button) findViewById(R.id.entregarButton);
+        //imageView = (ImageView) findViewById(R.id.portada_img);
 
        // FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
 
@@ -55,13 +59,20 @@ public class DetallesActivity extends AppCompatActivity {
 //            id = bundle.getInt("ID");
 //        }
         objeto.setText(getIntent().getStringExtra("OBJETO"));
-        id.setText(getIntent().getStringExtra("ID"));
+       // id.setText(getIntent().getStringExtra("ID"));
         fecha.setText(getIntent().getStringExtra("FECHA"));
         lugar.setText(getIntent().getStringExtra("LUGAR"));
         descripción.setText(getIntent().getStringExtra("DESCRIP"));
-        imageView.setImageURI(Uri.parse(getIntent().getStringExtra("IMG")));
+        //imageView.setImageURI(Uri.parse(getIntent().getStringExtra("IMG")));
 
 
+        entrega.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), EntregaActivity.class);
+                startActivity(intent);
+            }
+        });
 //        mDatabase.getReference().child("Objetos").addValueEventListener(new ValueEventListener() {
 //            @Override
 //            public void onDataChange(DataSnapshot dataSnapshot) {

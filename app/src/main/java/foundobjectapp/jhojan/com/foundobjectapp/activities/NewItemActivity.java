@@ -13,11 +13,13 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -39,7 +41,6 @@ import foundobjectapp.jhojan.com.foundobjectapp.models.Objeto;
 
 public class NewItemActivity extends AppCompatActivity {
 
-    ImageButton imageButton;
     ImageView imageView;
     EditText objetoName;
     EditText lugar;
@@ -63,7 +64,6 @@ public class NewItemActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_item);
 
-        imageButton = (ImageButton) findViewById(R.id.imagenObj);
         imageView = (ImageView) findViewById(R.id.objetoImg);
         objetoName = (EditText) findViewById(R.id.objetoname);
         lugar = (EditText) findViewById(R.id.lugarText);
@@ -75,18 +75,6 @@ public class NewItemActivity extends AppCompatActivity {
         mStorage = FirebaseStorage.getInstance().getReference();
 
         mRef = FirebaseDatabase.getInstance().getReference("Objetos");
-
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Selecciona una imagen"), PICK_IMAGE_REQUEST);
-            }
-        });
-
-
 
         agregar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -175,6 +163,15 @@ public class NewItemActivity extends AppCompatActivity {
         descObj.setText("");
     }
 
+    //Tomar foto
+
+//    private void dispatchTakePictureIntent(){
+//        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//        if (takePictureIntent.resolveActivity(getPackageManager()) != null){
+//            startActivityForResult(takePictureIntent, PICK_IMAGE_REQUEST);
+//        }
+//    }
+
     //Push de la imagen al Storage
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -199,6 +196,26 @@ public class NewItemActivity extends AppCompatActivity {
         return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri));
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.camera, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_camera:
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Selecciona una imagen"), PICK_IMAGE_REQUEST);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
     //confirm Dialog
     private void alertaConfirm(){
