@@ -56,7 +56,8 @@ public class DashboardActivity extends AppCompatActivity {
         entregObjetos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ObjetosEntregadosActivity.class);
+                //Intent intent = new Intent(getApplicationContext(), ObjetosEntregadosActivity.class);
+                Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
                 startActivity(intent);
             }
         });

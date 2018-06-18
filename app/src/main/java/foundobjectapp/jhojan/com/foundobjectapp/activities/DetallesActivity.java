@@ -1,7 +1,9 @@
 package foundobjectapp.jhojan.com.foundobjectapp.activities;
 
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -25,11 +27,14 @@ public class DetallesActivity extends AppCompatActivity {
 
     private String Descripción;
 
+    private String Imagen;
+
     TextView objeto;
     TextView fecha;
     TextView lugar;
     TextView descripción;
     TextView id;
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +46,7 @@ public class DetallesActivity extends AppCompatActivity {
         fecha = (TextView) findViewById(R.id.fechaText);
         lugar = (TextView) findViewById(R.id.lugarText);
         descripción = (TextView) findViewById(R.id.descText);
+        imageView = (ImageView) findViewById(R.id.portada_img);
 
        // FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
 
@@ -53,7 +59,7 @@ public class DetallesActivity extends AppCompatActivity {
         fecha.setText(getIntent().getStringExtra("FECHA"));
         lugar.setText(getIntent().getStringExtra("LUGAR"));
         descripción.setText(getIntent().getStringExtra("DESCRIP"));
-        //objeto.setText(getIntent().getStringExtra("IMG"));
+        imageView.setImageURI(Uri.parse(getIntent().getStringExtra("IMG")));
 
 
 //        mDatabase.getReference().child("Objetos").addValueEventListener(new ValueEventListener() {

@@ -3,12 +3,15 @@ package foundobjectapp.jhojan.com.foundobjectapp.adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -48,6 +51,7 @@ public class ObjetosAdapter extends RecyclerView.Adapter<ObjetosAdapter.Objetosv
         public void onBindViewHolder(ObjetosviewHolder holder, int position) {
                 final Objeto objeto = objetoList.get(position);
                 holder.nameObjeto.setText(objeto.getObjeto());
+                holder.imageView.setImageURI(Uri.parse(objeto.getImagen().toString()));
         }
 
         @Override
@@ -58,6 +62,7 @@ public class ObjetosAdapter extends RecyclerView.Adapter<ObjetosAdapter.Objetosv
         public static class ObjetosviewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
                 TextView nameObjeto;
+                ImageView imageView;
                 ArrayList<Objeto> objetos = new ArrayList<Objeto>();
                 Context ctx;
 
@@ -67,6 +72,7 @@ public class ObjetosAdapter extends RecyclerView.Adapter<ObjetosAdapter.Objetosv
                         this.ctx = ctx;
                         itemView.setOnClickListener(this);
                         nameObjeto = (TextView) itemView.findViewById(R.id.fullname_text);
+                        imageView = (ImageView) itemView.findViewById(R.id.picture_image);
 
                 }
 

@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="foundobjectapp.jhojan.com.foundobjectapp">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,7 +23,12 @@
         <activity android:name=".activities.DashboardActivity" />
         <activity android:name=".activities.ListObjetoActivity" />
         <activity android:name=".activities.DetallesActivity" />
-        <activity android:name=".activities.ObjetosEntregadosActivity"></activity>
+        <activity android:name=".activities.ObjetosEntregadosActivity" />
+        <activity
+            android:name=".activities.AdminActivity"
+            android:label="@string/title_activity_admin"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.NewItemActivity"></activity>
     </application>
 
 </manifest>

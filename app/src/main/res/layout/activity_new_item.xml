@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.NewItemActivity"
+    android:orientation="vertical"
+    android:layout_margin="10dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:gravity="center">
+        <ImageView
+            android:id="@+id/objetoImg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <ImageButton
+            android:id="@+id/imagenObj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/uploadimagen"/>
+            </RelativeLayout>
+     <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp">
+        <RelativeLayout
+            android:id="@+id/objetoForm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp">
+
+            <TextView
+                android:id="@+id/objetoTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="Objeto"
+                android:textAppearance="@style/Subtitulos" />
+
+            <EditText
+                android:id="@+id/objetoname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Descripciones"
+                android:layout_below="@+id/objetoTitle"
+                android:inputType="text"
+                android:hint="Nombre del Objeto"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/objetoForm"
+            android:layout_marginStart="40dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/etiquetado"/>
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp">
+        <RelativeLayout
+            android:id="@+id/lugarForm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp">
+            <TextView
+                android:id="@+id/lugarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Subtitulos"
+                android:text="Lugar de Hallazgo"/>
+
+            <EditText
+                android:id="@+id/lugarText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Descripciones"
+                android:layout_below="@+id/lugarTitle"
+                android:inputType="text"
+                android:hint="Lugar de Hallazgo"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/fechaForm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/lugarForm"
+            android:layout_marginStart="20dp">
+            <TextView
+                android:id="@+id/fechaTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Subtitulos"
+                android:text="Fecha de Hallazgo"/>
+
+            <EditText
+                android:id="@+id/fechaText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Descripciones"
+                android:layout_below="@id/fechaTitle"
+                android:inputType="date"
+                android:hint="Fecha de Hallazgo"/>
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/descForm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp">
+        <TextView
+            android:id="@+id/descTitle"
+            android:layout_width="match_parent"
+            android:textAppearance="@style/Subtitulos"
+            android:layout_height="wrap_content"
+            android:text="Descripción"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/descText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Descripciones"
+            android:layout_below="@id/descTitle"
+            android:inputType="textMultiLine"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="15dp">
+    <Button
+        android:id="@+id/addNewItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Agregar"
+        android:layout_marginBottom="5dp"
+        />
+
+    <Button
+        android:id="@+id/cancelNewItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancelar"
+        />
+    </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

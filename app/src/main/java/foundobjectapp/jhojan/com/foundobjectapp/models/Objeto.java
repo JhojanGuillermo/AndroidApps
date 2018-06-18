@@ -33,6 +33,9 @@ public class Objeto {
         Imagen = imagen;
     }
 
+    public Objeto(String id) {
+    }
+
     public String getObjeto() {
         return Objeto;
     }
